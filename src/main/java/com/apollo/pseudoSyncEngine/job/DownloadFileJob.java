@@ -1,4 +1,4 @@
-package com.apollo.pseudoSyncEngine.service;
+package com.apollo.pseudoSyncEngine.job;
 
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -9,11 +9,11 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Service
 @Component
-public class ScheduledService {
+public class DownloadFileJob {
 
     @Scheduled(cron = "${file.download.cron}")
     public void checkDownloadQueue() {
-        System.out.println("Scheduled task executed at " + System.currentTimeMillis());
+        log.info("Check Download Queue task executed at " + System.currentTimeMillis());
     }
 
 }
